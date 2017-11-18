@@ -1,5 +1,10 @@
 /* Author: Dmitriy Tkachenko */
 /* Reserved */
 html{}
-body{}
-h1 {}
+body{
+    background:#FF7F00;
+    text-align:center;
+}
+button {
+    width:10%;
+}
