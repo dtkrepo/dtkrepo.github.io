@@ -3,7 +3,19 @@
 "use strict";
 
 window.onload = function() {
-    construction_page();
+    layout();
+    construction_page();    
+}
+/* currently building */
+function layout(){
+    var body = document.body;
+    var nav_menu = document.createElement("nav");
+    var opt1 = document.createElement("a");
+    var txt = document.createTextNode("Home");
+    opt1.appendChild(txt);
+    nav_menu.appendChild(txt);
+    body.appendChild(nav_menu);
+    nav_menu.style.backgroundColor = "rgb(32, 32, 32)";
 }
 
 //builds the construction page
