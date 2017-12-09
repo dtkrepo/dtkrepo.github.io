@@ -3,8 +3,28 @@
 html{}
 body{
     background:#FF7F00;
-    text-align:center;
+    font-family: Monospace, "Sans-Serif";
 }
-button {
-    width:10%;
+h1 {
+    text-indent:5%;
+    text-decoration:underline;
+}
+nav {
+    background-color: rgb(32, 32, 32);
+    overflow: hidden;
+}
+a {
+    float: left;
+    display: block;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+    border: 1px solid rgb(32, 32, 32);
+}
+a:hover {
+    background:green;
+}
+p {
+    text-align:left;
 }

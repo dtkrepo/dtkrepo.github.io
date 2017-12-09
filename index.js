@@ -3,54 +3,66 @@
 "use strict";
 
 window.onload = function() {
-    layout();
-    construction_page();    
+    build_layout();
 }
-/* currently building */
-function layout(){
+
+/* form page layout */
+function build_layout(){
+    //grab body and create nav menu
     var body = document.body;
     var nav_menu = document.createElement("nav");
-    var opt1 = document.createElement("a");
+    //populate nav bar with links
+    //home page link
+    var link = document.createElement("a");
     var txt = document.createTextNode("Home");
-    opt1.appendChild(txt);
-    nav_menu.appendChild(txt);
+    link.appendChild(txt);
+    link.setAttribute("id", "Home");
+    nav_menu.appendChild(link);
+    //programs page link
+    link = document.createElement("a");
+    txt = document.createTextNode("Programs");
+    link.appendChild(txt);
+    link.setAttribute("id", "Programs");
+    nav_menu.appendChild(link);
+    //about page link
+    link = document.createElement("a");
+    txt = document.createTextNode("About");
+    link.appendChild(txt);
+    link.setAttribute("id", "About");
+    nav_menu.appendChild(link);
+    //add nav menu to body
     body.appendChild(nav_menu);
-    nav_menu.style.backgroundColor = "rgb(32, 32, 32)";
+    //add container to empty and refill based on desired page
+    var container = document.createElement("div");
+    container.setAttribute("id", "container");
+    body.appendChild(container);
+    initial_page();
 }
 
-//builds the construction page
-function construction_page(){
-    var body = document.body;
+//builds the initial home page
+function initial_page(){
+    var container = document.getElementById("container");
+    container.innerHTML = "";
     //build heading
     var heading = document.createElement("h1")
-    heading.setAttribute("id", "construction");
-    var txt = document.createTextNode("Under Construction");
+    var txt = document.createTextNode("Home");
     heading.appendChild(txt);
-    body.appendChild(heading);
+    container.appendChild(heading);
     //build line and break
-    var line = document.createElement("hr");
-    body.appendChild(line);
     var br = document.createElement("br");
-    body.appendChild(br);
-    //add invert button
-    var i_button = document.createElement("button");
-    txt = document.createTextNode("Invert");
-    i_button.appendChild(txt);
-    i_button.setAttribute("id","color_button");
-    i_button.setAttribute("type","button");
-    i_button.setAttribute("onclick","invert()");
-    body.appendChild(i_button);
+    container.appendChild(br);
 }
 
-//switches the color of the heading and background
-function invert(){
-    var temp = getComputedStyle(document.body, null).getPropertyValue("background-color");
-    if (temp != "rgb(0, 0, 0)"){
-        document.body.style.backgroundColor = "rgb(0, 0, 0)";
-        document.getElementById("construction").style.color = "rgb(255, 127, 0)";
-    }
-    else{
-        document.body.style.backgroundColor = "rgb(255, 127, 0)";
-        document.getElementById("construction").style.color = "rgb(0, 0, 0)";        
-    }
-}
+//loads title and content depending on what link was clicked
+$(document).on("click", "a", function(){
+    var container = document.getElementById("container");
+    container.innerHTML = "";
+    //build heading
+    var heading = document.createElement("h1");
+    var txt = document.createTextNode($(this).attr('id'));
+    heading.appendChild(txt);
+    container.appendChild(heading);
+    //build line and break
+    var br = document.createElement("br");
+    container.appendChild(br);
+});
