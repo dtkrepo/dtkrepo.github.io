@@ -3,7 +3,7 @@
 html{}
 body{
     background:#FF7F00;
-    font-family: Monospace, "Sans-Serif";
+    font-family: Monospace;
 }
 h1 {
     text-indent:5%;
@@ -27,4 +27,5 @@ a:hover {
 }
 p {
     text-align:left;
+    font-size: 14pt;
 }
