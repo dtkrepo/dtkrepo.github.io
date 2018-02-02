@@ -1,7 +1,7 @@
-## lobsterzoidberg.github.io
+## dtkrepo.github.io
+# author
+Dmitriy Tkachenko
 
+# purpose
 My Github page to practice web development.
 
-## Author
-
-Dmitriy Tkachenko
